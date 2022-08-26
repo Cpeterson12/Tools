@@ -1,0 +1,13 @@
+//Finds the player body
+ void Start()
+    {
+      enemyRb = GetComponent<Rigidbody>();
+      player = GameObject.Find("Player");
+    }
+
+    //Moves Towards Player
+    public void Update()
+    {
+      Vector3 lookDirection = (player.transform.position - transform.position).normalized;
+      enemyRb.AddForce( lookDirection * speed * Time.deltaTime);
+    }
