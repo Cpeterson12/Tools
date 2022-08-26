@@ -1,0 +1,13 @@
+//spawn obstacle
+ void Start()
+    {
+        InvokeRepeating("SpawnObstacle",startDelay,repeatRate);
+        PCS = GameObject.Find("Player").GetComponent<PlayerController>();
+    }
+//spawn position
+Vector3 GenerateSpawnPosition ()
+    {
+        float xPos = Random.Range(-spawnRangeX, spawnRangeX);
+        float yPos = Random.Range(spawnYMin, spawnYMax);
+        return new Vector3(xPos, 0, yPos);
+    }
